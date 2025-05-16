@@ -1,0 +1,19 @@
+/* White gradient fade from left to transparent */
+selector::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; /* Increased coverage for more dominant white area */
+    height: 100%;
+    background: linear-gradient(to right, white 40%, rgba(255, 255, 255, 0) 80%);
+    z-index: 0; /* Ensures it's behind all content */
+    pointer-events: none;
+  }
+  
+  /* Ensure all section content stays on top */
+  selector > .elementor-container {
+    position: relative;
+    z-index: 1;
+  }
+  
